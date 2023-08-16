@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
   return (
@@ -67,16 +67,13 @@ export default function Game() {
   function jumpTo(NextMove) {
     setCurrentMove(nextMove);
   }
+  
+  function Undo(nextMove){setCurrentMove (nextMove -1)}
   const moves = history.map((squares, move) => {
-    let description;
-    if (move > 0) {
-      description = "Go to Move: " + move;
-    } else {
-      description = "Go to game start ";
-    }
-    return (
-      <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
+    
+    return(
+      <li key ={move}>
+        <button onClick={() => Undo(move)}>{'Undo'}</button> 
       </li>
     );
   });
