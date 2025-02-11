@@ -1,3 +1,5 @@
+#!/bin/bash
+
 while true; do
   # Monitor CPU
   cpu_usage=$(top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4}')
