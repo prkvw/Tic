@@ -1,0 +1,25 @@
+warehouse( 
+    warehouse_id,
+    warehouse_name,
+    year_created,
+    street_address,
+    city,
+    state,
+    zip,
+    CONSTRAINT "PRIM_KEY" PRIMARY KEY (warehouse_id)
+);
+VALUES
+(
+
+)
+
+HISTORY (
+    history_id INTEGER NOT NULL DEFAULT nextval ('hist_id_seq'),
+    date INTEGER,
+    data TEXT,
+    customer_id INTEGER,
+    warehouse_id INTEGER,
+    CONSTRAINT "PRM_KEY" PRIMARY KEY (history_id),
+    CONSTRAINT "FORN_KEY" FOREIGN KEY (warehouse_id)
+
+);
